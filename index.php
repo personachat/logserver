@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect('localhost', 'root', 'root', 'pchat');
+include 'config.php';
 if (!$conn) {
     die('mysql error');
 }
