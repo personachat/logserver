@@ -7,4 +7,8 @@ while ($row = mysqli_fetch_assoc($res)) {
     fputcsv($file, [$row['log']]);
 }
 fclose($file);
-echo "Data dumped to dump.csv";
+header('Content-Type: text/csv');
+header("Content-Transfer-Encoding: utf-8"); 
+header("Content-disposition: attachment; filename=dump.csv"); 
+readfile('dump.csv');
+unlink('dump.csv');
